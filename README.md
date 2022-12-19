@@ -1,46 +1,74 @@
-# Project Title
+# Creacion de APi
 
-## Table of Contents
+## Tabla de contenidos
 
-- [About](#about)
-- [Getting Started](#getting_started)
-- [Usage](#usage)
-- [Contributing](../CONTRIBUTING.md)
+- [Creacion Del Proyecto](#Creacion)
+- [Iniciamos el proyecto](#Inicio)
+- [Uso](#usage)
 
-## About <a name = "about"></a>
+## Creacion <a name = "Creacion"></a>
 
-Write about 1-2 paragraphs describing the purpose of your project.
+Este proyecto Es la gia rapida para crear una api con node.js, express y mongoose.
 
-## Getting Started <a name = "getting_started"></a>
+## Iniciamos el proyecto <a name = "Inicio"></a>
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
+Estas instrucciones le proporcionarán una copia del proyecto en funcionamiento en su máquina local para fines de desarrollo y prueba. Empieze descomprimiendo la carpeta y abriendo su editor de codigo (Yo utilizo [visual studio code](https://code.visualstudio.com/)) por lo que te recomendare este editor para el proyecto.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them.
+pàra iniciar primero devera crear su cuenta en [MongoDB](https://cloud.mongodb.com/) y crear un Cluster, luego descarge este repositorio y siga los sigientes pasos.
 
 ```
-Give examples
+Le Recomiendo que Instale la Extencion REST Client por que usare esta extencion para hacer las peticiones a la APi, las peticiones se encuentran almacenadas dentro del archivo request.http
 ```
 
-### Installing
+(Si usted desea puede utilizar servicios como [Postman](https://www.postman.com/downloads/), [Soap-ui](https://www.soapui.org/downloads/soapui/) o el que sea de su Agrado)
 
-A step by step series of examples that tell you how to get a development env running.
+### Instalacion
 
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
+Abrimos una terminal dentro del proyecto y Ejecutamos el siguiente comando para iniciar node
 
 ```
-until finished
+npm  init --yes
 ```
 
-End with an example of getting some data out of the system or using it for a little demo.
+Instalamos Express ejecutando el siguiente comando
 
-## Usage <a name = "usage"></a>
+```
+npm i express
+```
 
-Add notes about how to use the system.
+Para probar el servidor instalaremos un paquete llamado nodemon ejecutando el comando
+
+```
+npm i nodemon -D
+```
+
+Instalamos mongoose para poder conectarnos A la BD Mongo con el siguiente comando
+
+```
+npm i mongoose
+```
+
+En este proyecto estaremos utilizando dotenv para crear varibles de entorno, para eso ejecutamos el comando
+
+```
+npm i dotenv -D
+```
+
+Crea un archivo .env y dentro pega la uri de tu Base de datos (para obtenerla ve a tu Cluster de MongoDB y Presiona -> 'Conect' -> 'Conect your Application' y copia la cadena que mongo te dara, Recuerda remplasar password por la contraseña que ingresaste al crear el cluster):
+
+```
+MONGODB_URI = {Aqui va la URI de tu Base de datos}
+```
+
+Ejecute La API con el comando y verifique si La api se creo correctamente
+
+```
+npm start
+```
+
+## Uso <a name = "usage"></a>
+
+Para modificar los datos que recibe la DB modifique dentro de (src/models/user.js) el Schema por los datos que desea recibir, luego modifique dentro de (src/routes/user.js) la parte de update a users(Peticion PUT) por los datos que ingreso dentro del Schema.
+Ademas recuerde modificar el archivo request.http al hacer las peticiones en caso de que este utilizando REST Client.
