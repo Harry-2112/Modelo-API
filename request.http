@@ -1,0 +1,37 @@
+###
+POST http://localhost:9000/api/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "nomb_cliente": "Juanito Mrianito",
+    "telefono":95734382,
+    "ciudad":"Trujillo",
+    "calle": "Lima #333",
+    "numero":12,
+    "estado": "Tujillo",
+    "fecha_nacimiento":"09/02/2011"
+}
+
+
+###
+GET http://localhost:9000/api/users HTTP/1.1
+
+###
+GET http://localhost:9000/api/users/639ce04726e681defeed1184 HTTP/1.1
+
+###
+PUT http://localhost:9000/api/users/639ce04726e681defeed1184 HTTP/1.1
+Content-Type: application/json
+
+{
+    "nomb_cliente": "Juana Stuar",
+    "telefono":81985678,
+    "ciudad":"Lima",
+    "calle": "Andahuailas #333",
+    "numero":81,
+    "estado": "Lima",
+    "fecha_nacimiento":"12/12/2001"
+}
+###
+
+DELETE http://localhost:9000/api/users/639ce04726e681defeed1184 HTTP/1.1
