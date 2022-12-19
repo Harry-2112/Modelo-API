@@ -73,6 +73,12 @@ por:
 
 ```
 
+Instale Cors para prevenir algun error
+
+```
+npm i cors
+```
+
 Ejecute La API con el comando y verifique si La api se creo correctamente
 
 ```
