@@ -62,6 +62,17 @@ Crea un archivo .env y dentro pega la uri de tu Base de datos (para obtenerla ve
 MONGODB_URI = {Aqui va la URI de tu Base de datos}
 ```
 
+Recuerde modificar la parte de Scripts en archivo package.json que se creo luego de iniciar el proyecto
+
+```
+modificar:
+"test": "echo \"Error: no test specified\" && exit 1"
+
+por:
+"start": "nodemon src/index.js"
+
+```
+
 Ejecute La API con el comando y verifique si La api se creo correctamente
 
 ```
